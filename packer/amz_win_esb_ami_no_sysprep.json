@@ -68,6 +68,7 @@
     },
     {
       "type": "chef-client",
+      "install_command": ". { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install-channel stable -version {{user `chef_version`}}",
       "guest_os_type": "windows",
       "config_template": "packer/templates/chef-client-win.tpl",
       "skip_install": false,
