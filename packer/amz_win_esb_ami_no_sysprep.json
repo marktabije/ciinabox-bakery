@@ -127,6 +127,7 @@
     "chef_path":"chef",
     "bucket_region":"ap-southeast-2",
     "cb_buld_no":"",
+    "chef_accept_license":"--chef-license accept",
     "ami_regions":"",
     "ami_users":"",
     "packer_role":"packer",
