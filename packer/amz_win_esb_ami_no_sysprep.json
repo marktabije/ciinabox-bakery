@@ -49,6 +49,10 @@
     },
     {
       "type": "powershell",
+      "script": "scripts/win/uninstall-chef.ps1"
+    },
+    {
+      "type": "powershell",
       "inline": [
         "New-Item c:/chef/cookbooks -type directory -force",
         "New-Item c:/chef/data_bags -type directory -force",
