@@ -68,7 +68,8 @@
     },
     {
       "type": "chef-client",
-      "install_command": "powershell -command \"msiexec.exe /x \\\"{493F75D7-C264-458E-8FCA-75D82250001F}\\\" /q ; . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -version {{user `chef_version`}}\"",
+      "install_command": "powershell -command \"$app = Get-WMIObject Win32_Product -filter \\\"Name LIKE 'Chef%'\\\" ; if ($app) { $app.uninstall(
+) } ; . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -version {{user `chef_version`}}\"",
       "guest_os_type": "windows",
       "config_template": "packer/templates/chef-client-win.tpl",
       "skip_install": false,
